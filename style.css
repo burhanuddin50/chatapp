@@ -1,0 +1,58 @@
+.logo{
+    width: 50px;
+    padding: 5px;
+}
+.navbar{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(37,211,102);
+}
+.logoname{
+    padding: 2px;
+    font-size: 30px;
+    margin: 5px;
+    font-weight: bolder;
+}
+*{
+    margin: 0%;
+    padding: 0%;
+}
+.container{
+    background-color: rgb(253, 242, 228);
+    height: 70vh;
+    width: 60vw;
+    display: block;
+    margin: auto;
+    overflow-y: auto;
+}
+.submitbar{
+    display: flex;
+    justify-content: center;
+}
+.in{
+    width: 876px;
+    border-radius: 10px;
+    margin: 2px;
+}
+.bt{
+    border-radius: 5px;
+    padding: 5px;
+}
+.message{
+    background-color: white;
+    display: block;
+    width: fit-content;
+    padding: 7px;
+    margin: 10px;
+    border: 2px solid black;
+    border-radius: 10px;
+}
+.right{
+   float: right;
+   clear: both;
+}
+.left{
+   float: left;
+   clear: both;
+}
