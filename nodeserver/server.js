@@ -1,4 +1,11 @@
-const io=require('socket.io')(8000);
+const path=require("path");
+const http=require("http");
+const express=require("express");
+const socketio=require("socket.io")
+const app=express();
+const server=http.createServer(app);
+const io=socketio(server);
+app.use(express.static(path.join(__dirname,'public')));
 const users={};
 io.on('connection',socket =>{
    socket.on('new-user-joined',name =>{
@@ -13,3 +20,5 @@ io.on('connection',socket =>{
     delete users[socket.id];
    })
 });
+const port=8000;
+server.listen(port,()=>{console.log(`Server running on port ${port}`)});
