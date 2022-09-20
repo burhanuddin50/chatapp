@@ -4,9 +4,19 @@ const express=require("express");
 const socketio=require("socket.io");
 const passport = require("passport");
 const session = require('express-session');
+const mongoose=require('mongoose');
 const GoogleStrategy = require( 'passport-google-oauth2' ).Strategy;
 const GOOGLE_CLIENT_ID="883345413583-pje0k3gtrlpis2124f8ah75t8gb4hod9.apps.googleusercontent.com";
 const GOOGLE_CLIENT_SECRET="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";
+main().catch(err=> console.log(err));
+async function main(){
+   await mongoose.connect('mongodb://localhost/chatapp');
+}
+const chatSchema=new mongoose.Schema({
+   name : String,
+   message : String
+})
+const chats=mongoose.model('chats',chatSchema);
 let name;
 passport.use(new GoogleStrategy({
     clientID:     GOOGLE_CLIENT_ID,
@@ -61,6 +71,8 @@ io.on('connection',socket =>{
    
    socket.on('send',message=>{
     socket.broadcast.emit('receive',{message: message,name: users[socket.id]});
+    let chat= new chats({name:users[socket.id],message:message});
+    chat.save();
    })
    socket.on('disconnect',()=>{
     socket.broadcast.emit('user-left',users[socket.id]);
