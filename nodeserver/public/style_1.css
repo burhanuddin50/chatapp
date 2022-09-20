@@ -1,0 +1,32 @@
+.center{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 25vw;
+    height: 35vh;
+    background-color: rgb(37,211,102);
+}
+.cont{
+    width: 95vw;
+    height: 95vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.google{
+    cursor: pointer;
+    padding: 5px;
+    border-radius: 5px;
+    
+}
+.imag{
+    width: 50px;
+}
+.inp{
+    outline: none;
+    margin: 5px;
+}
+.glink{
+    text-decoration: none;
+}

@@ -31,7 +31,7 @@
     justify-content: center;
 }
 .in{
-    width: 876px;
+    width: 56vw;
     border-radius: 10px;
     margin: 2px;
 }
@@ -55,4 +55,34 @@
 .left{
    float: left;
    clear: both;
+}
+.main{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    padding: 2px;
+}
+.users{
+    border: 2px solid red;
+    border-radius: 5px  ;
+    width: 25vw;
+    background-color: lightgreen;
+}
+
+.use{
+    border: 2px solid blue;
+    padding: 5px;
+    margin: 7px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    background-color: bisque;
+     
+}
+.head-user{
+    padding: 2px;
+    text-align: center;
+}
+.only-users{
+    height: 67vh;
+    overflow-y: auto;
 }
