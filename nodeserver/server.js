@@ -110,6 +110,7 @@ io.on('connection',socket =>{
    socket.on('disconnect',()=>{
     socket.broadcast.emit('user-left',users[socket.id]);
     delete users[socket.id];
+    delete photos[socket.id];
     socket.broadcast.emit('user-left-1',users,photos);
    })
 });
