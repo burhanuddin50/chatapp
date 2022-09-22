@@ -4,8 +4,9 @@
     align-items: center;
     flex-direction: column;
     width: 25vw;
-    height: 35vh;
+    height:fit-content;
     background-color: rgb(37,211,102);
+    border-radius: 10px;
 }
 .cont{
     width: 95vw;
@@ -15,13 +16,16 @@
     align-items: center;
 }
 .google{
+    
     cursor: pointer;
-    padding: 5px;
     border-radius: 5px;
+    margin-bottom: 25px;
+    background-color: cyan;
     
 }
 .imag{
     width: 50px;
+    margin-top: 25px;
 }
 .inp{
     outline: none;
@@ -29,4 +33,29 @@
 }
 .glink{
     text-decoration: none;
+    color: crimson;
+}
+#file{
+    display: none;
+}
+#inpimg{
+    
+    
+}
+#inpimg img{
+    cursor: pointer;
+    width: 25px;
+    height: 25px;
+    border-radius: 45%;
+    position: relative;
+    top: -28px;
+    right: -27px;
+}
+#php{
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+}
+.fa-light{
+    width: 100px;
 }

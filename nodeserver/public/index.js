@@ -20,30 +20,29 @@ form.addEventListener('submit',(e)=>{
     messagecont.scrollTop = messagecont.scrollHeight;
 })
   
-socket.on('user-joined',(name,users)=>{
+socket.on('user-joined',(name,users,photos)=>{
         append("Joined the chat","left",`${name}`);
         document.querySelector(".only-users").innerHTML="";
-        Object.keys(users).forEach(element => {
-        document.querySelector(".only-users").innerHTML+=`<div class="use">${users[element]}</div>`;
+       Object.keys(photos).forEach(element => {
+      document.querySelector(".only-users").innerHTML+=`<div class="use"><img src="${photos[element]}" alt="" srcset="" id="pht">${users[element]}</div>`;
         
     });
 })
-socket.on('personal',users=>{
+socket.on('personal',(users,photos)=>{
    document.querySelector(".only-users").innerHTML="";
-       Object.keys(users).forEach(element => {
-      document.querySelector(".only-users").innerHTML+=`<div class="use">${users[element]}</div>`;
+       Object.keys(photos).forEach(element => {
+      document.querySelector(".only-users").innerHTML+=`<div class="use"><img src="${photos[element]}" alt="" srcset="" id="pht">${users[element]}</div>`;
       
-         })}) 
+         });
+    }) 
 socket.on('receive',data=>{
     append(`${data.message}`,"left",`${data.name}`);
 })
 socket.on('user-left', user=>{
     append("Left the chat","left",`${user}`);
 })
-socket.on("user-left-1",users=>{
+socket.on("user-left-1",(users,photos)=>{
     document.querySelector(".only-users").innerHTML="";
-    Object.keys(users).forEach(element => {
-
-        document.querySelector(".only-users").innerHTML+=`<div class="use">${users[element]}</div>`;
-    });
-})
+       Object.keys(photos).forEach(element => {
+      document.querySelector(".only-users").innerHTML+=`<div class="use"><img src="${photos[element]}" alt="" srcset="" id="pht">${users[element]}</div>`;
+})})
