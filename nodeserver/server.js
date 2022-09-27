@@ -74,14 +74,19 @@ app.use(express.static(path.join(__dirname,'public')));
 app.get('/',(req,res)=>{
    res.sendFile(path.join(__dirname+'/views/inside.html'));
 })
-let photofile;
 let photourl;
 app.post('/',(req,res)=>{
-         photofile=req.files.phto;
-         cloudinary.uploader.upload(photofile.tempFilePath,(err,result)=>{
+         if(req.files===null)
+         {
+            photourl="main-qimg-2b21b9dd05c757fe30231fac65b504dd.webp";
+         }
+         else{
+         cloudinary.uploader.upload(req.files.phto.tempFilePath,(err,result)=>{
             photourl=result.url;
-         })
-         res.redirect('/google');
+         })}
+         
+         setTimeout(()=>{res.redirect('/google');},1000);
+         
 })
 app.get('/google',passport.authenticate('google',{scope:['email','profile']}));
 app.get('/google/callback',passport.authenticate('google',{successRedirect:'/chat',failureRedirect:'/failure'}));
@@ -106,7 +111,7 @@ io.on('connection',socket =>{
     socket.broadcast.emit('receive',{message: message,name: users[socket.id]});
     let chat= new chats({name:name_1,message:message});
     chat.save();
-   })
+   }) 
    socket.on('disconnect',()=>{
     socket.broadcast.emit('user-left',users[socket.id]);
     delete users[socket.id];

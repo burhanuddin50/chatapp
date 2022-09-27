@@ -31,7 +31,7 @@ socket.on('user-joined',(name,users,photos)=>{
 socket.on('personal',(users,photos)=>{
    document.querySelector(".only-users").innerHTML="";
        Object.keys(photos).forEach(element => {
-      document.querySelector(".only-users").innerHTML+=`<div class="use"><img src="${photos[element]}" alt="" srcset="" id="pht">${users[element]}</div>`;
+      document.querySelector(".only-users").innerHTML+=`<div class="use"><img src="${photos[element]}" alt="" srcset="" id="pht"><span  id="text_u">${users[element]}</span></div>`;
       
          });
     }) 
@@ -44,5 +44,17 @@ socket.on('user-left', user=>{
 socket.on("user-left-1",(users,photos)=>{
     document.querySelector(".only-users").innerHTML="";
        Object.keys(photos).forEach(element => {
-      document.querySelector(".only-users").innerHTML+=`<div class="use"><img src="${photos[element]}" alt="" srcset="" id="pht">${users[element]}</div>`;
+      document.querySelector(".only-users").innerHTML+=`<div class="use"><img src="${photos[element]}" alt="" srcset="" id="pht" ><span class="txt"> ${users[element]}</span></div>`;
 })})
+document.querySelector(".drop").addEventListener("click",()=>{
+    if(document.getElementById("menu-drop").style.display==="none"){
+    document.getElementById("menu-drop").style.display="block";
+     }
+    else{
+    document.getElementById("menu-drop").style.display="none";
+    }
+})
+
+document.getElementById("clr").addEventListener("click",()=>{
+    messagecont.innerHTML ="";
+})

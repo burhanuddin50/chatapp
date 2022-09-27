@@ -70,13 +70,13 @@
 }
 
 .use{
-    border: 2px solid blue;
     padding: 5px;
     margin: 7px;
     margin-bottom: 10px;
     border-radius: 5px;
     background-color: bisque;
-     
+    display: flex;
+    align-items:  center;
 }
 .head-user{
     padding: 2px;
@@ -85,9 +85,51 @@
 .only-users{
     height: 67vh;
     overflow-y: auto;
+   
 }
 #pht{
     width: 50px;
     height: 50px;
     border-radius: 50%;
+    padding-right: 2px;
+    transition: ease-in-out;
+    cursor: pointer;
+}
+#pht:hover{
+    position: relative;
+    left: 130px;
+    width: 75px;
+    height: 75px;
+}
+#pht:hover + #text_u{
+     display: none;
+}
+.txt{
+    font-size: larger;
+    padding: 15px;
+}
+.drop{
+    position: relative;
+    left: 625px;
+    cursor: pointer;
+    padding: 5px;
+}
+#menu-drop{
+    width: fit-content;
+    position: relative;
+    bottom: 550px;
+    float: right;
+    padding: 7px;
+    border: 2px solid red;
+    border-radius: 5px;
+    margin-right: 17px; 
+    background-color: burlywood;  
+    display: none;
+    transition: ease-in-out;
+}
+.list{
+    list-style: none;
+}
+#clr{
+    cursor: pointer;
 }

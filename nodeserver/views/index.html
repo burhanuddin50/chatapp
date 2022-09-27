@@ -7,17 +7,19 @@
     <title>Document</title>
     <link rel="stylesheet" href="style.css">
     <link rel="shortcut icon" href="whatsapp-g895561fde_1280.png" type="image/x-icon">
+    <script src="https://kit.fontawesome.com/746b6ac135.js" crossorigin="anonymous"></script>
 </head>
 <body>  
     <nav class="navbar">
         <img src="whatsapp-g895561fde_1280.png" alt="" class="logo">
         <span class="logoname">WhatsApp</span>
+        <div class=""><i class="fa-solid fa-ellipsis-vertical drop"></i></span>
     </nav>
     <div class="main">
     <div class="users">
         <h1 class="head-user"></h1>
-        <div class="only-users">
-        
+        <div class="only-users"> 
+            <div class="use"><img src="../public/main-qimg-2b21b9dd05c757fe30231fac65b504dd.webp" alt="" srcset="" id="pht"><span  id="text_u">${users[element]}</span></div>     
         </div>
     </div>
     <div class="rightside">
@@ -32,6 +34,11 @@
             class="bt">Send</button>
          </form>
     </div></div>
+</div>
+<div  id="menu-drop" >
+    <ul class="list">
+        <li id="clr">Clear Chat </li>
+    </ul>
 </div>
 </body>
 <script src="https://cdn.socket.io/4.5.0/socket.io.min.js" integrity="sha384-7EyYLQZgWBi67fBtVxw60/OWl1kjsfrPFcaU0pp0nAh+i8FD068QogUvg85Ewy1k" crossorigin="anonymous"></script>
