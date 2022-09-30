@@ -3,6 +3,7 @@
     padding: 5px;
 }
 .navbar{
+    width: screen;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -110,9 +111,9 @@
 }
 .drop{
     position: relative;
-    left: 625px;
     cursor: pointer;
     padding: 5px;
+    float: right;
 }
 #menu-drop{
     width: fit-content;
@@ -132,4 +133,34 @@
 }
 #clr{
     cursor: pointer;
+}
+html, body {
+    position:fixed;
+    top:0;
+    bottom:0;
+    left:0;
+    right:0;
+}
+.cross{
+    display: none;
+}
+.dt{
+    padding: 5px;
+    display: none;
+}
+.sd{
+    width: 77vw;
+    float: right;
+}
+.vc{
+    margin: 2px;
+    margin-top: 5px;
+    cursor: pointer;
+}
+.end{
+    display: none;
+    margin: 2px;
+    margin-top: 2px;
+    cursor: pointer;
+    
 }

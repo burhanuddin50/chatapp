@@ -1,0 +1,43 @@
+
+.navbar{  
+    height: 13vh;
+}
+.logo{
+    width: 13vw;
+}
+.logoname{
+    font-size: 2rem;
+}
+.main{
+    justify-content: center;
+}
+.users{
+    width: 60vw;
+    height: 87vh;
+}
+.drop{
+    width: 50px;
+}
+.send{
+    width: 55vw;
+}
+.container{
+    height: 83vh;
+}
+#text_u{
+    font-size: 0.9rem;
+}
+.cross{
+    display: block;
+    padding: 5px;
+    margin-left: 17px;
+}
+.drop{
+    top:0px;
+    left:0px;
+}
+#menu-drop{
+    position: relative;
+    top: -780px;
+    left: -31px;
+}
