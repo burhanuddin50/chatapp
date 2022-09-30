@@ -82,3 +82,13 @@ document.querySelector(".end").addEventListener("click",()=>{
 recognition.addEventListener("result",(event)=>{
     messageinp.value+=`${event.results[event.resultIndex][0].transcript}`;
 })
+document.getElementById("drk").addEventListener("click",()=>{
+    document.getElementById("hd").innerHTML+='<link rel="stylesheet" href="theme.css">';
+    document.getElementById("lig").style.color="rgb(0,0,0)";
+    document.getElementById("drk").style.color="rgb(255,0,0)";
+})
+document.getElementById("lig").addEventListener("click",()=>{
+    document.getElementById("hd").innerHTML +='<link rel="stylesheet" href="style.css">';
+    document.getElementById("drk").style.color="rgb(0,0,0)";
+    document.getElementById("lig").style.color="rgb(255,0,0)";
+})
