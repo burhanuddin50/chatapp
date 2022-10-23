@@ -35,27 +35,6 @@
     text-decoration: none;
     color: crimson;
 }
-#file{
-    display: none;
-}
-#inpimg{
-    
-    
-}
-#inpimg img{
-    cursor: pointer;
-    width: 25px;
-    height: 25px;
-    border-radius: 45%;
-    position: relative;
-    top: -28px;
-    right: -27px;
-}
-#php{
-    width: 100px;
-    height: 100px;
-    border-radius: 50%;
-}
 .fa-light{
     width: 100px;
 }

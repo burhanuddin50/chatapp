@@ -41,7 +41,7 @@ cloudinary.config({
      await mongoose.connect('mongodb://localhost/chatapp');
   }
   const userSchema=new mongoose.Schema({
-      name: String ,
+      name: String,
       email:String,
       verified:String,
       photo_url :String
@@ -76,27 +76,35 @@ app.get('/',(req,res)=>{
 })
 let photourl;
 app.post('/',(req,res)=>{
-         if(req.files===null)
-         {
-            photourl="main-qimg-2b21b9dd05c757fe30231fac65b504dd.webp";
-         }
-         else{
-         cloudinary.uploader.upload(req.files.phto.tempFilePath,(err,result)=>{
-            photourl=result.url;
-         })}
          
-         setTimeout(()=>{res.redirect('/google');},1000);
+        res.redirect('/google');
          
 })
 app.get('/google',passport.authenticate('google',{scope:['email','profile']}));
-app.get('/google/callback',passport.authenticate('google',{successRedirect:'/chat',failureRedirect:'/failure'}));
+app.get('/google/callback',passport.authenticate('google',{successRedirect:'/group',failureRedirect:'/failure'}));
 app.get('/failure',(req,res)=>{
    res.send("Error");
 });
+app.get('/group',isLoggedIn,(req,res)=>{
+   res.sendFile(path.join(__dirname+'/views/group.html'));
+})
+app.post('/group',(req,res)=>{
+   if(req.files.phto===null)
+   {
+      photourl="main-qimg-2b21b9dd05c757fe30231fac65b504dd.webp";
+   }
+   else{
+      cloudinary.uploader.upload(req.files.phto.tempFilePath,(err,result)=>{
+      photourl=result.url;
+     });
+    }
+   setTimeout(()=>{res.redirect('/chat');},1000);
+})
 app.get('/chat',isLoggedIn,(req,res)=>{
    res.sendFile(path.join(__dirname+'/views/index.html'));
 });
 io.on('connection',socket =>{
+   
    if(name_1!=null){
    let users_1=new users_info({name:name_1,email:email_1,verfied:isVerify,photo_url:photourl});
    users_1.save();}

@@ -1,0 +1,21 @@
+
+.navbar{  
+    height: 13vh;
+}
+.logo{
+    width: 13vw;
+}
+.logoname{
+    font-size: 2rem;
+}
+.drop{
+    width: 50px;
+    top:0px;
+    left:0px;
+}
+.profile-photo{
+    margin: 6px;
+}
+.center{
+    width: 60vw;
+}

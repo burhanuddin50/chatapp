@@ -1,0 +1,107 @@
+.logo{
+    width: 50px;
+    padding: 5px;
+}
+.navbar{
+    width: screen;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(37,211,102);
+}
+.logoname{
+    padding: 2px;
+    font-size: 30px;
+    margin: 5px;
+    font-weight: bolder;
+}
+*{
+    margin: 0%;
+    padding: 0%;
+}
+.sd{
+    width: 77vw;
+    float: right;
+}
+.drop{
+    position: relative;
+    cursor: pointer;
+    padding: 5px;
+    float: right;
+}
+.center{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 25vw;
+    height:fit-content;
+    background-color: rgb(37,211,102);
+    border-radius: 10px;
+}
+.cont{
+    width: 95vw;
+    height: 45vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.imag{
+    width: 50px;
+    margin-top: 25px;
+}
+#inpimg img{
+    cursor: pointer;
+    width: 25px;
+    height: 25px;
+    border-radius: 45%;
+    position: relative;
+    top: -28px;
+    right: -27px;
+}
+#php{
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+}
+.fa-light{
+    width: 100px;
+}
+.inp{
+    outline: none;
+    margin: 5px;
+}
+#file{
+    display: none;
+}
+.grp{
+    background-color: lightgreen;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 70px;
+    padding: 10px;
+}
+.hd{
+    display: flex;
+    margin: 5px;
+}
+.hd span{
+    margin: 10px;
+    cursor: pointer;
+    border: 2px solid brown;
+    background-color: antiquewhite;
+    border-radius: 5px;
+    padding: 2px;
+   
+}
+.grps{
+    background-color: antiquewhite;
+    padding: 10px;
+    margin: 5px;
+    border-radius: 5px;
+}
+.grps button{
+    cursor:pointer;
+}
